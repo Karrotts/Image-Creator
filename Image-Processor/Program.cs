@@ -15,7 +15,8 @@ namespace ImageProcessor
                 Console.WriteLine("Image Loaded Successfully");
                 //CRTFilter.Apply(ref image);
                 //BWFilter.Apply(ref image);
-                InvertFilter.Apply(ref image);
+                //InvertFilter.Apply(ref image);
+                PureFilter.Apply(ref image);
                 FileManager.SaveBitmap(image.Source, FileType.PNG, image.Directory, "test");
             }
         }
