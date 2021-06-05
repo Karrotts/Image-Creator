@@ -1,9 +1,9 @@
-﻿using Image_Creator.Filters;
-using Image_Creator.Tools;
+﻿using ImageProcessor.Filters;
+using ImageProcessor.Tools;
 using System;
 using System.Drawing;
 
-namespace Image_Creator
+namespace ImageProcessor
 {
     class Program
     {

@@ -1,10 +1,10 @@
-﻿using Image_Creator.Tools;
+﻿using ImageProcessor.Tools;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Image_Creator.Filters
+namespace ImageProcessor.Filters
 {
     public static class InvertFilter
     {

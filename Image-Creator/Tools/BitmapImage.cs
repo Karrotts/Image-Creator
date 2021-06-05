@@ -4,7 +4,7 @@ using System.Text;
 using System.Drawing;
 using System.IO;
 
-namespace Image_Creator.Tools
+namespace ImageProcessor.Tools
 {
     public class BitmapImage
     {

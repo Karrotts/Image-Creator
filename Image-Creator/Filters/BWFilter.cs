@@ -1,7 +1,7 @@
-﻿using Image_Creator.Tools;
+﻿using ImageProcessor.Tools;
 using System.Drawing;
 
-namespace Image_Creator.Filters
+namespace ImageProcessor.Filters
 {
     public static class BWFilter
     {

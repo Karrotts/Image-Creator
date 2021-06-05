@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
-using Image_Creator.Tools;
+using ImageProcessor.Tools;
 
-namespace Image_Creator.Filters
+namespace ImageProcessor.Filters
 {
     public static class CRTFilter
     {
