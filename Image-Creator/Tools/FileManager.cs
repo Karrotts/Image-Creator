@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
+using System.IO;
 
 namespace Image_Creator.Tools
 {
@@ -66,8 +66,43 @@ namespace Image_Creator.Tools
             }
 
             // file type was not found
+            Console.WriteLine("Error: File Type Unknown.");
             return FileType.UKN;
         }
 
+        /// <summary>
+        /// Transforms FileType into correct ImageFormat
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns>System.Drawing.Imaging.ImageFormat</returns>
+        public static System.Drawing.Imaging.ImageFormat FileTypeToImageFormat(FileType type)
+        {
+            switch(type)
+            {
+                case FileType.PNG:
+                    return System.Drawing.Imaging.ImageFormat.Png;
+                case FileType.JPG:
+                    return System.Drawing.Imaging.ImageFormat.Jpeg;
+                case FileType.BMP:
+                    return System.Drawing.Imaging.ImageFormat.Bmp;
+                case FileType.GIF:
+                    return System.Drawing.Imaging.ImageFormat.Gif;
+                case FileType.TIF:
+                    return System.Drawing.Imaging.ImageFormat.Tiff;
+                default:
+                    return System.Drawing.Imaging.ImageFormat.Png;
+            }
+        }
+
+        /// <summary>
+        /// Saves bitmap in directory with the given file type and name
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="type"></param>
+        /// <param name="path"></param>
+        public static void SaveBitmap(Bitmap image, FileType type, string directory, string name)
+        {
+            image.Save($@"{directory}{name}.{type}" , FileTypeToImageFormat(type));
+        }
     }
 }

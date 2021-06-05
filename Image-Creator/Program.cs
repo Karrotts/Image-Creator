@@ -9,11 +9,14 @@ namespace Image_Creator
     {
         static void Main(string[] args)
         {
-            BitmapImage image = new BitmapImage(Console.ReadLine());
+            BitmapImage image = new BitmapImage(@"C:\Users\Wes\Pictures\cooper.jpg");
             if (image.Source != null)
             {
-                CRTFilter.Apply(ref image);
                 Console.WriteLine("Image Loaded Successfully");
+                //CRTFilter.Apply(ref image);
+                //BWFilter.Apply(ref image);
+                InvertFilter.Apply(ref image);
+                FileManager.SaveBitmap(image.Source, FileType.PNG, image.Directory, "test");
             }
         }
     }

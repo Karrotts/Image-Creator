@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Drawing;
+﻿using System.Drawing;
 using Image_Creator.Tools;
 
 namespace Image_Creator.Filters
@@ -23,23 +20,23 @@ namespace Image_Creator.Filters
                 RGB current = RGB.R;
                 for (int x = 0; x < source.Width; x++)
                 {
-                    switch(current)
+                    Color pixel = source.GetPixel(x, y);
+                    int average = (pixel.R + pixel.G + pixel.B) / 3;
+                    switch (current)
                     {
                         case RGB.R:
-                            source.SetPixel(x, y, Color.FromArgb(source.GetPixel(x, y).R, 0, 0));
+                            source.SetPixel(x, y, Color.FromArgb(pixel.R, 0, 0));
                             break;
                         case RGB.G:
-                            source.SetPixel(x, y, Color.FromArgb(0, source.GetPixel(x, y).G, 0));
+                            source.SetPixel(x, y, Color.FromArgb(0, pixel.G, 0));
                             break;
                         case RGB.B:
-                            source.SetPixel(x, y, Color.FromArgb(0, 0, source.GetPixel(x, y).B));
+                            source.SetPixel(x, y, Color.FromArgb(0, 0, pixel.B));
                             break;
                     }
                     current = Next(current);
                 }
             }
-
-            source.Save("test", System.Drawing.Imaging.ImageFormat.Png);
         }
 
         private static RGB Next(RGB current)

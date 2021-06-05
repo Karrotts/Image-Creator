@@ -20,9 +20,9 @@ namespace Image_Creator.Tools
             set { _source = value;  } 
         }
 
-        public string Directory { get; }
-        public string Path { get; }
-        public string FileName { get; }
+        public string Directory { get { return _directory; } }
+        public string Path      { get { return _path; } }
+        public string FileName  { get { return _name; } }
 
         public BitmapImage(string path)
         {
