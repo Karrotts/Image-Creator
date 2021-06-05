@@ -1,4 +1,5 @@
-﻿using Image_Creator.Tools;
+﻿using Image_Creator.Filters;
+using Image_Creator.Tools;
 using System;
 using System.Drawing;
 
@@ -11,6 +12,7 @@ namespace Image_Creator
             BitmapImage image = new BitmapImage(Console.ReadLine());
             if (image.Source != null)
             {
+                CRTFilter.Apply(ref image);
                 Console.WriteLine("Image Loaded Successfully");
             }
         }
