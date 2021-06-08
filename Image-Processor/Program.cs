@@ -9,7 +9,7 @@ namespace ImageProcessor
     {
         static void Main(string[] args)
         {
-            BitmapImage image = new BitmapImage(@"C:\Users\Wes\Pictures\cooper.jpg");
+            BitmapImage image = new BitmapImage(@"C:\Users\Wes\Pictures\spoopy.jpg");
             if (image.Source != null)
             {
                 Console.WriteLine("Image Loaded Successfully");
@@ -17,6 +17,7 @@ namespace ImageProcessor
                 //BWFilter.Apply(ref image);
                 //InvertFilter.Apply(ref image);
                 PureFilter.Apply(ref image);
+                PureFilter.ApplyBlackWhite(ref image);
                 FileManager.SaveBitmap(image.Source, FileType.PNG, image.Directory, "test");
             }
         }
