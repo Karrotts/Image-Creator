@@ -16,8 +16,9 @@ namespace ImageProcessor
                 //CRTFilter.Apply(ref image);
                 //BWFilter.Apply(ref image);
                 //InvertFilter.Apply(ref image);
-                PureFilter.Apply(ref image);
-                PureFilter.ApplyBlackWhite(ref image);
+                //PureFilter.Apply(ref image);
+                //PureFilter.ApplyBlackWhite(ref image);
+                BlurFilter.Apply(ref image);
                 FileManager.SaveBitmap(image.Source, FileType.PNG, image.Directory, "test");
             }
         }
