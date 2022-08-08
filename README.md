@@ -1,2 +1,2 @@
 # Image-Processor
-Image Creation and Modification Tool
+Image processing tool. Slow manual way of applying custom filters to images.
